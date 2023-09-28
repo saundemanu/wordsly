@@ -6,7 +6,10 @@ class App extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter'
-    )
+      title: 'Flutter wordle dupe',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
+      home: const WordleScreen(),
+    );
   }
 }
