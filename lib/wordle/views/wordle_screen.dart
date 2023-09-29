@@ -23,10 +23,30 @@ class _WordleScreenState extends State<WordleScreen> {
   Word? get _currentWord =>
       _currentWordIndex < _board.length ? _board[_currentWordIndex] : null;
 
+  Word _solution = Word.fromString(
+    fiveLetterWords[Random().nextInt(fiveLetterWords.length)].toUpperCase(),
+  );
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          'WORDSLY',
+          style: TextStyle(
+            fontSize: 36, 
+            fontWeight: FontWeight.bold,
+            letterSpacing: 4,
+          ),
+        ),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Board(board: _board),
+        ]),
     );
   }
 }
